@@ -13,6 +13,7 @@ environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
+  http: ^0.12.0+1
   flutter:
     sdk: flutter
 
@@ -62,6 +63,15 @@ flutter:
   - family:  Book
     fonts:
      - asset: fonts/Book.ttf
+  - family:  User
+    fonts:
+     - asset: fonts/User.ttf
+  - family:  Town
+    fonts:
+     - asset: fonts/Town.ttf
+  - family:  Exit
+    fonts:
+     - asset: fonts/Exit.ttf 
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

@@ -32,6 +32,25 @@ class Book {
   static const IconData book = const IconData(0xe828, fontFamily: _kFontFam);
 }
 
+class User {
+  User._();
+  static const _kFontFam = 'User';
+  static const IconData user = const IconData(0xe82a, fontFamily: _kFontFam);
+}
+
+class Town {
+  Town._();
+  static const _kFontFam = 'Town';
+  static const IconData town_hall = const IconData(0xe83c, fontFamily: _kFontFam);
+}
+class Exit {
+  Exit._();
+  static const _kFontFam = 'Exit';
+  static const IconData logout = const IconData(0xf02d, fontFamily: _kFontFam);
+}
+
+
+
 //------------------------icon-------------------------------
 
 
@@ -40,9 +59,9 @@ class HomePage extends StatefulWidget {
     new DrawerItem("Новости", News.doc),
     new DrawerItem("Расписание", Calendar.calendar),
     new DrawerItem("Зачётная книжка", Book.book),
-    new DrawerItem("Преподаватели", Book.book),
-    new DrawerItem("Об университете", Book.book),
-    new DrawerItem("Выход", Book.book)
+    new DrawerItem("Преподаватели", User.user),
+    new DrawerItem("Об университете", Town.town_hall),
+    new DrawerItem("Выход", Exit.logout)
   ];
 
   @override
@@ -102,7 +121,7 @@ class HomePageState extends State<HomePage> {
         child: new Column(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-                accountName: new Text("John Doe"), accountEmail: null),
+                accountName: new Text("Username"), accountEmail: null),
             new Column(children: drawerOptions)
           ],
         ),
