@@ -4,6 +4,7 @@ import 'package:test1_app/fragments/schedule_fragment.dart';
 import 'package:test1_app/fragments/book_fragment.dart';
 import 'package:test1_app/fragments/teacher_fragment.dart';
 import 'package:test1_app/fragments/about_fragment.dart';
+import 'package:test1_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -56,6 +57,7 @@ class Exit {
 
 class HomePage extends StatefulWidget {
   final drawerItems = [
+     new DrawerItem("Вход", User.user),
     new DrawerItem("Новости", News.doc),
     new DrawerItem("Расписание", Calendar.calendar),
     new DrawerItem("Зачётная книжка", Book.book),
@@ -71,20 +73,22 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  int _selectedDrawerIndex = 0;
+  int _selectedDrawerIndex = 3;
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-        return new NewsFragment();
+        return new LoginPage();
       case 1:
-        return new ScheduleFragment();
+        return new NewsFragment();
       case 2:
-        return new BookFragment();
+        return new ScheduleFragment();
       case 3:
-        return new TeacherFragment();
+        return new BookFragment();
       case 4:
-        return new AboutFragment();  
+        return new TeacherFragment();
       case 5:
+        return new AboutFragment();  
+      case 6:
         return SystemNavigator.pop();  
       default:
         return new Text("Error");
